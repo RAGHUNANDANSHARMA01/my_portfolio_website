@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<style>
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+h1{
+  color: red;
+}
+</style>
+<body>
+
+<h1><center>!!Most Welcome For Login Details !!</center></h1>
+<center><p>“ !! You cannot change your FUTURE, you can change your HABITS. And surely your HABITS will change your FUTURE !!”</p>
+</center>
+<div>
+  <form method="POST" name="google-sheet">
+    <label for="fname">Name</label>
+    <input type="text" id="fname" name="Name" placeholder="Your name.. " required>
+    <label for="lname">Email</label>
+    <input type="text" id="lname" name="Email" placeholder="Your Email name.." required>
+    <label for="lname">Password</label>
+    <input type="text" id="lname" name="Password" placeholder="Your Password name.." required>
+    <label for="lname">ConfirmPassword</label>
+    <input type="text" id="lname" name="ConfirmPassword" placeholder="Your Confirm Password name.." required>
+    <label for="lname">Mobile</label>
+    <input type="text" id="lname" name="Mobile" placeholder="Your Mobile Number.." required>
+
+  
+    <input type="submit" value="Submit" name="submit">
+  </form>
+</div>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbz-OtfCJH0Qln1qhPsjKcYLzKUgsamdFI8p5wQitNMeJFY_44aanLdejLB4zdPB58Pq2w/exec'
+    const form = document.forms['google-sheet']
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => alert("Thanks for Contacting us..!"))
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+
+</body>
+</html>
+
+

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <img class="bg" src="https://media.istockphoto.com/id/1166029933/video/sea-or-ocean-waves-close-up-view-blue-waves-sea-water-blue-crystal-clear-water-one-can-see.jpg?s=640x640&k=20&c=D1apsttRE1ZV5c7vCcd6_9APFmNlCxGyICoQ7if6QDM=" alt="ram lalla">
+    <div class="container">
+        <h1>!! Most Welcome For Signup !!</h1>
+       <p>“ !! You cannot change your Future, you can change your Habits. And surely your Habits will change your Future !! ”</p>
+    <form method="POST" name="google-sheet">
+        <input type="text" name="Name" id="name" placeholder="Enter your name" required>
+        <input type="text" name="Age" id="age" placeholder="Enter your age" required>
+        <input type="text" name="Gender" id="gender" placeholder="Enter your gender" required>
+        <input type="email" name="Email" id="email" placeholder="Enter your email" required>
+        <input type="phone" name="Phone" id="phone" placeholder="Enter your phone" required>
+        <button class="btn" value="submit " name="submit" >Submit</button> 
+    </form>
+    </div>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxAzIhKKy-oHyV20P97HhJvsq5FPdSUi6STbDTuvO4GDhe-9jTLAIAcJnBinhsSA64gqg/exec'
+        const form = document.forms['google-sheet']
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => alert("Thanks for Contacting us..!"))
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+</body>
+</html>
